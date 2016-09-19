@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Formifier.iml" filepath="$PROJECT_DIR$/Formifier.iml" />
-      <module fileurl="file://$PROJECT_DIR$/formifier/formifier.iml" filepath="$PROJECT_DIR$/formifier/formifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample-app/app.iml" filepath="$PROJECT_DIR$/sample-app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/formifier/formifier.iml" filepath="$PROJECT_DIR$/formifier/formifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-app/sample-app.iml" filepath="$PROJECT_DIR$/sample-app/sample-app.iml" />
     </modules>
   </component>
 </project>

@@ -1,7 +1,7 @@
 package com.abrahamyans.formifier.converter;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Samvel Abrahamyan
@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConverterFactory {
 
     private static final ConverterFactory instance = new ConverterFactory();
-    private Map<String, Converter<?, ?>> converterCache = new ConcurrentHashMap<>();
+    private Map<String, Converter<?, ?>> converterCache = new HashMap<>();
 
     private ConverterFactory() {
         super();
