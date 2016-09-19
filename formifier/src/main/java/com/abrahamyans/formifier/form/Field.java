@@ -23,7 +23,7 @@ public class Field <V extends View, T>{
         return name;
     }
 
-    public Object getInput(){
+    public T getInput(){
         return converter.convert(sourceView);
     }
 
