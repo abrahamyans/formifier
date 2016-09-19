@@ -8,15 +8,15 @@ import java.util.Map;
 /**
  * @author Samvel Abrahamyan
  */
-public class FormMapConverter implements Form<Map<String, Object>> {
+public class FormMapConversion implements Form<Map<String, Object>> {
 
     private List<Field<?, ?>> fields = new ArrayList<>();
 
-    public FormMapConverter(List<Field<?, ?>> fields){
+    public FormMapConversion(List<Field<?, ?>> fields){
         this.fields = fields;
     }
 
-    public FormMapConverter(){
+    public FormMapConversion(){
         super();
     }
 

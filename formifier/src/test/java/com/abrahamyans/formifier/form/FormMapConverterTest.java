@@ -30,11 +30,11 @@ public class FormMapConverterTest {
     @Mock
     private Field<TextView, Number> ageField;
 
-    private FormMapConverter formMapConverter;
+    private FormMapConversion formMapConversion;
 
     @Before
     public void init(){
-        formMapConverter = new FormMapConverter(Arrays.<Field<?, ?>>asList(
+        formMapConversion = new FormMapConversion(Arrays.<Field<?, ?>>asList(
                 nameField,
                 isMarriedField,
                 ageField
@@ -51,7 +51,7 @@ public class FormMapConverterTest {
         when(isMarriedField.getInput()).thenReturn(false);
         when(ageField.getInput()).thenReturn(22);
 
-        Map<String, Object> formValues = formMapConverter.getForm();
+        Map<String, Object> formValues = formMapConversion.getForm();
 
         assertEquals(formValues.get("name"), "Joe Bloggs");
         assertEquals(formValues.get("isMarried"), false);

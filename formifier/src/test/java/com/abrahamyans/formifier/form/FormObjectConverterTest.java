@@ -32,11 +32,11 @@ public class FormObjectConverterTest {
     @Mock
     private Form<Map<String, Object>> source;
 
-    private FormObjectConverter<Person> toPojoConverter;
+    private FormObjectConversion<Person> toPojoConverter;
 
     @Before
     public void init(){
-        toPojoConverter = new FormObjectConverter<>(Person.class, source);
+        toPojoConverter = new FormObjectConversion<>(Person.class, source);
     }
 
     @Test
