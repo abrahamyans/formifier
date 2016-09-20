@@ -1,5 +1,7 @@
 package com.abrahamyans.formifier.form;
 
+import android.view.View;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -8,20 +10,24 @@ import java.util.Map;
 /**
  * @author Samvel Abrahamyan
  */
-public class FormMapConversion implements Form<Map<String, Object>> {
+public class FormOfMap implements Form<Map<String, Object>> {
 
     private List<Field<?, ?>> fields = new ArrayList<>();
 
-    public FormMapConversion(List<Field<?, ?>> fields){
-        this.fields = fields;
+    public FormOfMap(List<Field<?, ?>> fields){
+        this.fields.addAll(fields);
     }
 
-    public FormMapConversion(){
+    public FormOfMap(){
         super();
     }
 
-    public void addField(Field<?, ?> field){
+    public void addField(Field<? extends View, ?> field){
         this.fields.add(field);
+    }
+
+    public void removeField(Field<? extends View, ?> field) {
+        this.fields.remove(field);
     }
 
     @Override
@@ -31,5 +37,6 @@ public class FormMapConversion implements Form<Map<String, Object>> {
             values.put(f.name(), f.getInput());
         return values;
     }
+
 
 }

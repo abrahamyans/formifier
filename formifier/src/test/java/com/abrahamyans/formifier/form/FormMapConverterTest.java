@@ -30,11 +30,11 @@ public class FormMapConverterTest {
     @Mock
     private Field<TextView, Number> ageField;
 
-    private FormMapConversion formMapConversion;
+    private FormOfMap formMapConversion;
 
     @Before
     public void init(){
-        formMapConversion = new FormMapConversion(Arrays.<Field<?, ?>>asList(
+        formMapConversion = new FormOfMap(Arrays.<Field<?, ?>>asList(
                 nameField,
                 isMarriedField,
                 ageField

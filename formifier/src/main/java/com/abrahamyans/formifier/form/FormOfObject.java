@@ -7,12 +7,12 @@ import java.util.Map;
 /**
  * @author Samvel Abrahamyan
  */
-public class FormObjectConversion<T> implements Form<T>{
+public class FormOfObject<T> implements Form<T>{
 
     private Class<T> targetKlass;
     private Form<Map<String, Object>> formMapConverter;
 
-    public FormObjectConversion(Class<T> klass, Form<Map<String, Object>> formMapConverter){
+    public FormOfObject(Class<T> klass, Form<Map<String, Object>> formMapConverter){
         this.targetKlass = klass;
         this.formMapConverter = formMapConverter;
     }
