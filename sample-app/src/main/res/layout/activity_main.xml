@@ -19,28 +19,66 @@
 
         <com.abrahamyans.formifier.view.FieldView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:name="username"
+            app:converter="TextViewStringConverter">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="username"
-                app:name="username"
-                app:converter="TextViewStringConverter"/>
+                android:hint="Username"
+                />
 
         </com.abrahamyans.formifier.view.FieldView>
 
         <com.abrahamyans.formifier.view.FieldView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:name="password"
+            app:converter="TextViewStringConverter">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="password"
-                app:name="password"
-                app:converter="TextViewStringConverter"/>
+                android:hint="Password" />
 
         </com.abrahamyans.formifier.view.FieldView>
 
+        <com.abrahamyans.formifier.view.FieldView
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:name="age"
+            app:converter="TextViewIntegerConverter">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age" />
+
+        </com.abrahamyans.formifier.view.FieldView>
+
+        <com.abrahamyans.formifier.view.FieldView
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:name="rememberMe"
+            app:converter="CheckBoxBooleanConverter">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.abrahamyans.formifier.view.FieldView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="onSubmit"/>
+
     </com.abrahamyans.formifier.view.FormView>
+
+    <com.abrahamyans.formifiersample.SomeView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:some="qwerqwer"/>
 
 </RelativeLayout>

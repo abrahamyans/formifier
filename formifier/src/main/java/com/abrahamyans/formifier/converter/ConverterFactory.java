@@ -1,5 +1,9 @@
 package com.abrahamyans.formifier.converter;
 
+import com.abrahamyans.formifier.converter.impl.CheckBoxBooleanConverter;
+import com.abrahamyans.formifier.converter.impl.TextViewIntegerConverter;
+import com.abrahamyans.formifier.converter.impl.TextViewStringConverter;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +21,9 @@ public class ConverterFactory {
     }
 
     private void initializeDefaultConverters() {
-
+        converterCache.put(TextViewStringConverter.class.getSimpleName(), new TextViewStringConverter());
+        converterCache.put(CheckBoxBooleanConverter.class.getSimpleName(), new CheckBoxBooleanConverter());
+        converterCache.put(TextViewIntegerConverter.class.getSimpleName(), new TextViewIntegerConverter());
     }
 
     public static ConverterFactory getInstance(){

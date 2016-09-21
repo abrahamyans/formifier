@@ -22,13 +22,19 @@ public class FieldView extends LinearLayout {
     private final Converter converter;
     private Field<? extends View, ?> field;
 
+
     public FieldView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(
+        TypedArray typedArray = context.obtainStyledAttributes(
                 attrs,
-                R.styleable.FieldView,
+                com.abrahamyans.formifier.R.styleable.FieldView,
                 0, 0
         );
+        if(!typedArray.hasValue(R.styleable.FieldView_converter))
+            throw new IllegalStateException("Attribute converter is required for FieldView");
+        if(!typedArray.hasValue(R.styleable.FieldView_name))
+            throw new IllegalStateException("Attribute name is required for FieldView");
+
         String converterClassName = typedArray.getString(R.styleable.FieldView_converter);
         this.converter = ConverterFactory.getInstance().getConverter(converterClassName);
         this.name = typedArray.getString(R.styleable.FieldView_name);
@@ -48,8 +54,8 @@ public class FieldView extends LinearLayout {
         super.onViewAdded(child);
         if (this.getChildCount() > 1)
             throw new IllegalStateException("FieldView can have only one child");
-        if (converter.getSourceType() != child.getClass())
-            throw new IllegalStateException("Supplied converter for " + converter.getSourceType().getSimpleName() + " but found child of type " + child.getClass().getSimpleName());
+        if (child.getClass().isAssignableFrom(converter.getSourceType()))
+            throw new IllegalStateException("Supplied converter for " + converter.getSourceType().getSimpleName() + " but found incompatible type " + child.getClass().getSimpleName());
         this.field = new Field<>(
                 this.name,
                 converter,

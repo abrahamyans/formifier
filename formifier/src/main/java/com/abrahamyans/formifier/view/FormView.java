@@ -21,6 +21,7 @@ public class FormView extends LinearLayout implements ViewGroup.OnHierarchyChang
 
     public FormView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setOnHierarchyChangeListener(this);
     }
 
     public <T> T getFormClass (Class<T> klass){
